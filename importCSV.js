@@ -11,7 +11,7 @@ module.exports = function(tablename, pathFile, callback){
      data_to_dump.push(data);
    })
    .on("end", function(){
-     callback(db.dumpData(tablename, data_to_dump));
+     callback(db.dump(tablename, data_to_dump));
    });
 
 stream.pipe(csvStream);
